@@ -1,0 +1,15 @@
+.navbar {
+    width: 100%;
+    background-color: skyblue;
+    padding: 15px 0px;
+    text-align: right;
+    border-radius:20px;
+    position: absolute;
+    bottom:0px;
+}
+
+.navbarMenu {
+    color: beige;
+    margin: 8px;
+    text-decoration: none;
+}
