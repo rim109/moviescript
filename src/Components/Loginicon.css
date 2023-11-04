@@ -2,6 +2,7 @@
     max-width: 100px;
     max-height: 50px;
     position: absolute;
-    left: 840px;
     top: 130px;
+    display: flex;
+    justify-content: center;
 }
