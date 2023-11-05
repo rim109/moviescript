@@ -7,7 +7,7 @@ import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import Mainpage from './pages/Mainpage';
 import Header from './Components/Header';
 import Nav from './Components/Nac';
-import Loginicon from './Components/Loginicon';
+import MovieDetail from './pages/MovieDetail';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render (
@@ -16,7 +16,8 @@ root.render (
     <Header/>
     <Nav/>
     <Routes>
-      <Route path='/' element={<Mainpage/>}></Route>
+      <Route path="/" element={<Mainpage/>}></Route>
+      <Route path='/:movieId' element={<MovieDetail/>}></Route>
     </Routes>
     </BrowserRouter>
   </React.StrictMode>
