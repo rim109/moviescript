@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import "./MovieDetail.css"
 
 const MovieDetail = () => {
   const param = useParams()
@@ -24,11 +25,14 @@ const MovieDetail = () => {
   }, []);
 
   return (
-    <div>
+    <>
+    <div className="movie-info">
       {movie ? <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}></img> : null}
-      <span>{movie? movie.title : null}</span>
-      <span>{movie? movie.overview : null}</span>
-    </div>
+      <span className="movie-title">{movie? movie.title : null} </span> </div>
+      <div><span className="movie-text">{movie? movie.overview : null}</span></div>
+    
+
+    </>
   )
 }
 

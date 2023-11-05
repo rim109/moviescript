@@ -1,15 +1,24 @@
+import { useNavigate } from 'react-router-dom';
 import './Loginicon.css'
+
+
 const Loginicon = () => {
+    const navigate = useNavigate();
+
+    const navigatelogin = () => {
+        navigate("/pages/Loginpage")
+    }
+
     return (
         <>
-        <div className="login-img">
+        <div className="login-img" onClick={navigatelogin}>
             <img
-            src="https://cdn-icons-png.flaticon.com/512/5087/5087579.png" width={210} height={210} />
+            src="https://cdn-icons-png.flaticon.com/512/8109/8109306.png" width={150} height={150} />
         
         </div>
         <div className="res-img">
             <img
-            src="https://cdn-icons-png.flaticon.com/512/3069/3069346.png" width={160} height={160} />
+            src="https://cdn-icons-png.flaticon.com/512/4088/4088034.png" width={160} height={160} />
         </div>
         <div className="movie-img">
             <img
@@ -21,15 +30,15 @@ const Loginicon = () => {
         </div>
         <div className="film-img">
             <img
-            src="https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/512x512/plain/film.png" width={150} height={150} />
+            src="https://cdn-icons-png.flaticon.com/512/1275/1275136.png" width={145} height={145} />
         </div>
         <div className="film2-img">
             <img
-            src="https://cdn-icons-png.flaticon.com/512/4221/4221837.png" width={150} height={150} />
+            src="https://cdn-icons-png.flaticon.com/512/1974/1974054.png" width={150} height={150} />
         </div>
         <div className="camera-img">
             <img
-            src="https://cdn-icons-png.flaticon.com/512/4132/4132737.png" width={150} height={150} />
+            src="https://cdn-icons-png.flaticon.com/512/2699/2699194.png" width={150} height={150} />
         </div>
 
 

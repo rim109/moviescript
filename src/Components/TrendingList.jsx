@@ -71,7 +71,7 @@ const TrendingList = () => {
                 {movie.title.slice(0,41)}
               </Typography>
               <Typography className="text-typo" variant="body2" color="text.secondary">
-                {movie.overview.slice(0,240)}
+                {movie.overview.slice(0,235)}
               </Typography>
             </CardContent>
             <CardActions>

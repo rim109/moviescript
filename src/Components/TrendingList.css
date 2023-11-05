@@ -15,7 +15,7 @@
     display: flex;
     position:absolute;
     justify-content: center;
-    top: 450px;
+    top: 265px;
     right: 90px;
   }
   .search-input {
@@ -25,7 +25,7 @@
   }
   .search-info {
     position: absolute;
-    top: 150px;
+    top: 310px;
     right: 5px;
     color: black;
     display: flex;
