@@ -3,6 +3,7 @@
     height: 550px;
     position: absolute;
     top: 210px;
+    right: 0px;
     display: flex;
     justify-content: center;
   }
@@ -15,10 +16,36 @@
 
   }
   .movie-text {
-    font-size: 30px;
+    font-size: 22px;
+    white-space: pre-wrap;
     display: flex;
     position: absolute;
-    bottom: 80px;
+    bottom: 170px;
     text-align: center;
     text-shadow: #FC0 1px 0 10px;
+    word-break: normal;
+  
+  }
+
+  .movie-day {
+    font-size: 20px;
+    position: absolute;
+    top: 700px;
+    left: 1150px;
+  }
+
+  .movie-vote {
+    font-size: 15px;
+    display: flex;
+    position: absolute;
+    top: 730px;
+    left: 1150px;
+
+  }
+
+  .movie-lang {
+    font-size: 40px;
+    text-shadow: 2px 2px 3px violet;
+    position: absolute;
+    left: 50px;
   }

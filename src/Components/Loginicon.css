@@ -1,6 +1,7 @@
 .login-img {
     max-width: 100px;
     max-height: 50px;
+    display: flex;
     position: absolute;
     top: 230px;
     left: 1160px;
@@ -10,6 +11,7 @@
 .res-img {
     max-width: 100px;
     max-height: 50px;
+    display: flex;
     position: absolute;
     top: 225px;
     left: 1330px;
@@ -20,6 +22,7 @@
 .camera-img {
     max-width: 100px;
     max-height: 50px;
+    display: flex;
     position: absolute;
     top: 228px;
     left: 810px;
@@ -29,6 +32,7 @@
 .movie-img {
     max-width: 100px;
     max-height: 50px;
+    display: flex;
     position: absolute;
     top: 228px;
     left: 620px;
@@ -38,6 +42,7 @@
 .popcon-img {
     max-width: 100px;
     max-height: 50px;
+    display: flex;
     position: absolute;
     top: 228px;
     left: 440px;
@@ -47,6 +52,7 @@
 .film-img {
     max-width: 100px;
     max-height: 50px;
+    display: flex;
     position: absolute;
     top: 230px;
     left: 260px;
@@ -56,6 +62,7 @@
 .film2-img {
     max-width: 100px;
     max-height: 50px;
+    display: flex;
     position: absolute;
     top: 220px;
     left: 80px;

@@ -1,0 +1,25 @@
+.icons-list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    flex-direction: column;
+    position: absolute;
+    top: 550px;
+    left: 1130px;
+  }
+  .button{
+      cursor:pointer;
+      transition: transform 300ms ease;
+      font-size: 100px;
+  }
+  .red{
+    color:red;
+  }
+  h3{
+    height: 30px;
+    width: 100px;
+  }
+  .button:hover{
+      transform: scale(1.1);
+  }

@@ -9,6 +9,7 @@ import Header from './Components/Header';
 import Nav from './Components/Nac';
 import MovieDetail from './pages/MovieDetail';
 import Loginpage from './pages/Loginpage';
+import Reserveration from './pages/Reserveration';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render (
@@ -20,7 +21,7 @@ root.render (
       <Route path="/" element={<Mainpage/>}></Route>
       <Route path="/:movieId" element={<MovieDetail/>}></Route>
       <Route path="/pages/Loginpage" element={<Loginpage/>}></Route>
-
+      <Route path="/pages/Reserveration" element={<Reserveration/>}></Route>
     </Routes>
     </BrowserRouter>
   </React.StrictMode>

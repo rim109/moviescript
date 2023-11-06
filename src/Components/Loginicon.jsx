@@ -9,6 +9,9 @@ const Loginicon = () => {
         navigate("/pages/Loginpage")
     }
 
+    const navigateres = () => {
+        navigate("/pages/Reserveration")
+    }
     return (
         <>
         <div className="login-img" onClick={navigatelogin}>
@@ -16,7 +19,7 @@ const Loginicon = () => {
             src="https://cdn-icons-png.flaticon.com/512/8109/8109306.png" width={150} height={150} />
         
         </div>
-        <div className="res-img">
+        <div className="res-img" onClick={navigateres}>
             <img
             src="https://cdn-icons-png.flaticon.com/512/4088/4088034.png" width={160} height={160} />
         </div>
