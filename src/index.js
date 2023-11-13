@@ -10,6 +10,8 @@ import Nav from './Components/Nac';
 import MovieDetail from './pages/MovieDetail';
 import Loginpage from './pages/Loginpage';
 import Reserveration from './pages/Reserveration';
+import Signuppage from './pages/Signuppage';
+import VerificationCode from './pages/VerificationCode';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render (
@@ -21,6 +23,8 @@ root.render (
       <Route path="/" element={<Mainpage/>}></Route>
       <Route path="/:movieId" element={<MovieDetail/>}></Route>
       <Route path="/pages/Loginpage" element={<Loginpage/>}></Route>
+      <Route path="/pages/Signuppage" element={<Signuppage/>}></Route>
+      <Route path="/pages/VerificationCode" element={<VerificationCode/>}></Route>
       <Route path="/pages/Reserveration" element={<Reserveration/>}></Route>
     </Routes>
     </BrowserRouter>

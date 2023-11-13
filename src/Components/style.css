@@ -5,8 +5,8 @@
     height: 300px;
     flex-direction: column;
     position: absolute;
-    top: 550px;
-    left: 1130px;
+    top: 500px;
+    left: 1048px;
   }
   .button{
       cursor:pointer;
