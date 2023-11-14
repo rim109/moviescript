@@ -24,7 +24,7 @@ root.render (
       <Route path="/:movieId" element={<MovieDetail/>}></Route>
       <Route path="/pages/Loginpage" element={<Loginpage/>}></Route>
       <Route path="/pages/Signuppage" element={<Signuppage/>}></Route>
-      <Route path="/pages/VerificationCode" element={<VerificationCode/>}></Route>
+      <Route path="/pages/VerificationCode/:username" element={<VerificationCode/>}></Route>
       <Route path="/pages/Reserveration" element={<Reserveration/>}></Route>
     </Routes>
     </BrowserRouter>

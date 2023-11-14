@@ -1,3 +1,5 @@
+import { useNavigate } from 'react-router-dom';
+import './Signuppage.css'
 import {
 	CognitoUserPool,
 	CognitoUserAttribute,
@@ -10,7 +12,8 @@ const Signuppage = () => {
         ClientId: '2dcbea0f3r8lnn2ql6uh6tkv97', // Your client id here
     };
     var userPool = new CognitoUserPool(poolData);
-    
+    const navigate = useNavigate();
+
     var attributeList = [];
     const onSubmit = (e) => {
         e.preventDefault()
@@ -41,6 +44,7 @@ const Signuppage = () => {
             }
             var cognitoUser = result.user;
             console.log('user name is ' + cognitoUser.getUsername());
+            navigate(`/pages/VerificationCode/${e.target[0].value}`)
         });
     }
 
@@ -64,7 +68,7 @@ const Signuppage = () => {
             </form>
             <br />
             <div>
-            <p>아직 아이디가 없다면<a href="./Loginpage">Sign in</a></p>
+            <p>만약 아이디가 있다면<a href="./Loginpage">Sign in</a></p>
             </div>
     </div>
     

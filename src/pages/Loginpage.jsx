@@ -1,7 +1,10 @@
+import { useNavigate } from 'react-router-dom';
+import './Loginpage.css'
 import {
 	CognitoUserPool,
 	CognitoUserAttribute,
 	CognitoUser,
+    AuthenticationDetails,
 } from 'amazon-cognito-identity-js';
 
 const Loginpage = () => {
@@ -10,37 +13,30 @@ const Loginpage = () => {
         ClientId: '2dcbea0f3r8lnn2ql6uh6tkv97', // Your client id here
     };
     var userPool = new CognitoUserPool(poolData);
-    
-    var attributeList = [];
+    const navigate =useNavigate();
     const onSubmit = (e) => {
         e.preventDefault()
-        console.log(e)
-        var dataEmail = {
-            Name: 'email',
-            Value: e.target[0].value,
+        var authenticationData = {
+            Username: e.target[0].value,
+            Password: e.target[1].value,
         };
-        
-        var dataNickname = {
-            Name: 'nickname',
-            Value: '+15555555555',
-        };
-        var attributeEmail = new CognitoUserAttribute(dataEmail);
-        var attributePhoneNumber = new CognitoUserAttribute(
-            dataNickname
+        var authenticationDetails = new AuthenticationDetails(
+            authenticationData
         );
-        
-        attributeList.push(attributeEmail);
-        attributeList.push(attributePhoneNumber);
-        userPool.signUp(e.target[0].value, e.target[1].value, attributeList, null, function(
-            err,
-            result
-        ) {
-            if (err) {
+        var userData = {
+            Username: e.target[0].value,
+            Pool: userPool,
+        };
+        var cognitoUser = new CognitoUser(userData);
+        cognitoUser.authenticateUser(authenticationDetails, {
+            onSuccess: function(result) {
+                var accessToken = result.getAccessToken().getJwtToken();
+                localStorage.setItem('accessToken',accessToken)
+                navigate('/')
+            },
+            onFailure: function(err) {
                 alert(err.message || JSON.stringify(err));
-                return;
-            }
-            var cognitoUser = result.user;
-            console.log('user name is ' + cognitoUser.getUsername());
+            },
         });
     }
 

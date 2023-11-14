@@ -1,8 +1,9 @@
 import {
-	CognitoUserPool,
-	CognitoUserAttribute,
-	CognitoUser,
+    CognitoUserPool,
+    CognitoUserAttribute,
+    CognitoUser,
 } from 'amazon-cognito-identity-js';
+import { useNavigate, useParams } from 'react-router-dom';
 
 const VerificationCode = () => {
     var poolData = {
@@ -10,54 +11,44 @@ const VerificationCode = () => {
         ClientId: '2dcbea0f3r8lnn2ql6uh6tkv97', // Your client id here
     };
     var userPool = new CognitoUserPool(poolData);
-    
+    const param = useParams();
+    const navigate =useNavigate()
+
     var attributeList = [];
     const onSubmit = (e) => {
         e.preventDefault()
         console.log(e)
-        var dataEmail = {
-            Name: 'email',
-            Value: e.target[0].value,
+        var userData = {
+            Username: param.username,
+            Pool: userPool,
         };
-        
-        var dataNickname = {
-            Name: 'nickname',
-            Value: '+15555555555',
-        };
-        var attributeEmail = new CognitoUserAttribute(dataEmail);
-        var attributePhoneNumber = new CognitoUserAttribute(
-            dataNickname
-        );
-        
-        attributeList.push(attributeEmail);
-        attributeList.push(attributePhoneNumber);
-        userPool.signUp(e.target[0].value, e.target[1].value, attributeList, null, function(
-            err,
-            result
-        ) {
+        var cognitoUser = new CognitoUser(userData);
+        cognitoUser.confirmRegistration(e.target[0].value, true, function (err, result) {
             if (err) {
                 alert(err.message || JSON.stringify(err));
                 return;
             }
-            var cognitoUser = result.user;
-            console.log('user name is ' + cognitoUser.getUsername());
+            console.log('call result: ' + result);
+            navigate('/pages/Loginpage')
         });
+
+
     }
 
     return (
-    <div class="prompt">
-            <h1>Sign in</h1>
+        <div class="prompt">
+            <h1>VerificationCode</h1>
             <form onSubmit={onSubmit}>
-                <div> 
-                    <label for="email">Email</label>
+                <div>
+                    <label for="email">code</label>
                     <input id="email" name="code" type="text" required />
                 </div>
 
-            <div><button type="submit">search</button></div> 
+                <div><button type="submit">search</button></div>
             </form>
             <br />
-    </div>
-    
+        </div>
+
     )
 }
 export default VerificationCode 
