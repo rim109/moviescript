@@ -44,6 +44,7 @@ const Signuppage = () => {
             }
             let cognitoUser = result.user;
             console.log("user name is "+ cognitoUser.getUsername());
+            window.alert("회원가입이 되었습니다")
             navigate(`/pages/VerificationCode/${e.target[0].value}`)
         });
     }

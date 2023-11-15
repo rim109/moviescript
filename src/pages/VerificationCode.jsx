@@ -30,6 +30,7 @@ const VerificationCode = () => {
                 return;
             }
             console.log("call result: " + result);
+            window.alert("알맞은 코드입니다.")
             navigate("/pages/Loginpage")
         });
 

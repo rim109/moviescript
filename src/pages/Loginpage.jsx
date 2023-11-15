@@ -32,6 +32,7 @@ const Loginpage = () => {
             onSuccess: function(result) {
                 var accessToken = result.getAccessToken().getJwtToken();
                 localStorage.setItem("accessToken",accessToken)
+                window.alert("로그인이 되었습니다")
                 navigate("/")
             },
             onFailure: function(err) {
