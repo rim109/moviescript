@@ -2,34 +2,35 @@ import {
     CognitoUserPool,
     CognitoUserAttribute,
     CognitoUser,
-} from 'amazon-cognito-identity-js';
-import { useNavigate, useParams } from 'react-router-dom';
+} from "amazon-cognito-identity-js";
+import { useNavigate, useParams } from "react-router-dom";
+import "./VerificationCode.css";
 
 const VerificationCode = () => {
-    var poolData = {
-        UserPoolId: 'ap-northeast-2_LhDmZb4mF', // Your user pool id here
-        ClientId: '2dcbea0f3r8lnn2ql6uh6tkv97', // Your client id here
+    let poolData = {
+        UserPoolId: process.env.REACT_APP_UserPoolId, // Your user pool id here
+        ClientId: process.env.REACT_APP_ClientId, // Your client id here
     };
-    var userPool = new CognitoUserPool(poolData);
+    let userPool = new CognitoUserPool(poolData);
     const param = useParams();
     const navigate =useNavigate()
 
-    var attributeList = [];
+
     const onSubmit = (e) => {
         e.preventDefault()
         console.log(e)
-        var userData = {
+        let userData = {
             Username: param.username,
             Pool: userPool,
         };
-        var cognitoUser = new CognitoUser(userData);
+        let cognitoUser = new CognitoUser(userData);
         cognitoUser.confirmRegistration(e.target[0].value, true, function (err, result) {
             if (err) {
                 alert(err.message || JSON.stringify(err));
                 return;
             }
-            console.log('call result: ' + result);
-            navigate('/pages/Loginpage')
+            console.log("call result: " + result);
+            navigate("/pages/Loginpage")
         });
 
 
@@ -40,7 +41,7 @@ const VerificationCode = () => {
             <h1>VerificationCode</h1>
             <form onSubmit={onSubmit}>
                 <div>
-                    <label for="email">code</label>
+                    <label className="code-css" for="email">code</label>
                     <input id="email" name="code" type="text" required />
                 </div>
 

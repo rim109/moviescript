@@ -1,34 +1,34 @@
-import { useNavigate } from 'react-router-dom';
-import './Signuppage.css'
+import { useNavigate } from "react-router-dom";
+import "./Signuppage.css"
 import {
 	CognitoUserPool,
 	CognitoUserAttribute,
 	CognitoUser,
-} from 'amazon-cognito-identity-js';
+} from "amazon-cognito-identity-js";
 
 const Signuppage = () => {
-    var poolData = {
-        UserPoolId: 'ap-northeast-2_LhDmZb4mF', // Your user pool id here
-        ClientId: '2dcbea0f3r8lnn2ql6uh6tkv97', // Your client id here
+    let poolData = {
+        UserPoolId: process.env.REACT_APP_UserPoolId, // Your user pool id here
+        ClientId: process.env.REACT_APP_ClientId, // Your client id here
     };
-    var userPool = new CognitoUserPool(poolData);
+    let userPool = new CognitoUserPool(poolData);
     const navigate = useNavigate();
 
-    var attributeList = [];
+    let attributeList = [];
     const onSubmit = (e) => {
         e.preventDefault()
         console.log(e)
-        var dataEmail = {
-            Name: 'email',
+        let dataEmail = {
+            Name: "email",
             Value: e.target[0].value,
         };
         
-        var dataNickname = {
-            Name: 'nickname',
-            Value: '+15555555555',
+        let dataNickname = {
+            Name: "nickname",
+            Value: e.target[2].value,
         };
-        var attributeEmail = new CognitoUserAttribute(dataEmail);
-        var attributePhoneNumber = new CognitoUserAttribute(
+        let attributeEmail = new CognitoUserAttribute(dataEmail);
+        let attributePhoneNumber = new CognitoUserAttribute(
             dataNickname
         );
         
@@ -42,8 +42,8 @@ const Signuppage = () => {
                 alert(err.message || JSON.stringify(err));
                 return;
             }
-            var cognitoUser = result.user;
-            console.log('user name is ' + cognitoUser.getUsername());
+            let cognitoUser = result.user;
+            console.log("user name is "+ cognitoUser.getUsername());
             navigate(`/pages/VerificationCode/${e.target[0].value}`)
         });
     }
@@ -53,15 +53,15 @@ const Signuppage = () => {
             <h1>Sign up</h1>
             <form onSubmit={onSubmit}>
                 <div> 
-                    <label for="email">Email</label>
+                    <label className="email-css" for="email">Email </label>
                     <input id="email" name="email" type="text" required />
                 </div>
                 <div>
-                    <label for="password">Password</label>
+                    <label className="password-css" for="password">Password</label>
                     <input id="password" name="password" type="password" required />
                 </div>
                 <div>
-                    <label for="password">Nickname</label>
+                    <label className="password-css" for="password">Nickname</label>
                     <input id="password" name="nickname" type="text" required />
                 </div>
             <div><button type="submit">Sign up</button></div> 

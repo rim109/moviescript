@@ -1,4 +1,4 @@
-import './Mainimage.css'
+import "./Mainimage.css"
 
 const Mainimage = () => {
     return (

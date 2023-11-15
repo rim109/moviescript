@@ -1,5 +1,5 @@
-import { useNavigate } from 'react-router-dom';
-import './Loginicon.css'
+import { useNavigate } from "react-router-dom";
+import "./Loginicon.css"
 
 
 const Loginicon = () => {

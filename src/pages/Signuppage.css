@@ -1,15 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Sunflower:wght@300&display=swap');
-.prompt{
-    font-family: 'East Sea Dokdo', sans-serif;
-    font-size: 2em;
-    text-align: center;
-    border-radius: 10px;
+.email-css {
+    margin-right: 35px;
 }
 
-.button{
-    font-family: 'East Sea Dokdo', sans-serif;
-    font-size: 2em;
-    text-align: center;
-    padding: 10 50 0 50
-    
+.password-css {
+    margin-right: 5px;
 }

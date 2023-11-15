@@ -1,38 +1,38 @@
-import { useNavigate } from 'react-router-dom';
-import './Loginpage.css'
+import { useNavigate } from "react-router-dom";
+import "./Loginpage.css";
 import {
 	CognitoUserPool,
 	CognitoUserAttribute,
 	CognitoUser,
     AuthenticationDetails,
-} from 'amazon-cognito-identity-js';
+} from "amazon-cognito-identity-js";
 
 const Loginpage = () => {
-    var poolData = {
-        UserPoolId: 'ap-northeast-2_LhDmZb4mF', // Your user pool id here
-        ClientId: '2dcbea0f3r8lnn2ql6uh6tkv97', // Your client id here
+    let poolData = {
+        UserPoolId:process.env.REACT_APP_UserPoolId, // Your user pool id here
+        ClientId:  process.env.REACT_APP_ClientId, // Your client id here
     };
-    var userPool = new CognitoUserPool(poolData);
+    let userPool = new CognitoUserPool(poolData);
     const navigate =useNavigate();
     const onSubmit = (e) => {
         e.preventDefault()
-        var authenticationData = {
+        let authenticationData = {
             Username: e.target[0].value,
             Password: e.target[1].value,
         };
-        var authenticationDetails = new AuthenticationDetails(
+        let authenticationDetails = new AuthenticationDetails(
             authenticationData
         );
-        var userData = {
+        let userData = {
             Username: e.target[0].value,
             Pool: userPool,
         };
-        var cognitoUser = new CognitoUser(userData);
+        let cognitoUser = new CognitoUser(userData);
         cognitoUser.authenticateUser(authenticationDetails, {
             onSuccess: function(result) {
                 var accessToken = result.getAccessToken().getJwtToken();
-                localStorage.setItem('accessToken',accessToken)
-                navigate('/')
+                localStorage.setItem("accessToken",accessToken)
+                navigate("/")
             },
             onFailure: function(err) {
                 alert(err.message || JSON.stringify(err));
@@ -45,11 +45,11 @@ const Loginpage = () => {
             <h1>Sign in</h1>
             <form onSubmit={onSubmit}>
                 <div> 
-                    <label for="email">Email</label>
+                    <label className="email-css" for="email">Email </label>
                     <input id="email" name="email" type="text" required />
                 </div>
                 <div>
-                    <label for="password">Password</label>
+                    <label className="password-css" for="password">Password</label>
                     <input id="password" name="password" type="password" required />
                 </div>
             <div><button type="submit">Sign in</button></div> 
