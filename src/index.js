@@ -1,19 +1,19 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
 import App from './App';
-import reportWebVitals from './reportWebVitals';
-import {BrowserRouter, Route, Routes} from 'react-router-dom'
-import Mainpage from './pages/Mainpage';
-import Header from './Components/Header';
-import Nav from './Components/Nac';
-import MovieDetail from './pages/MovieDetail';
-import Loginpage from './pages/Loginpage';
-import Reserveration from './pages/Reserveration';
-import Signuppage from './pages/Signuppage';
-import VerificationCode from './pages/VerificationCode';
+import reportWebVitals from "./reportWebVitals";
+import {BrowserRouter, Route, Routes} from "react-router-dom"
+import Mainpage from "./pages/Mainpage";
+import Header from "./Components/Header";
+import Nav from "./Components/Nac";
+import MovieDetail from "./pages/MovieDetail";
+import Loginpage from "./pages/Loginpage";
+import Reserveration from "./pages/Reserveration";
+import Signuppage from "./pages/Signuppage";
+import VerificationCode from "./pages/VerificationCode";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render (
   <React.StrictMode>
     <BrowserRouter>
