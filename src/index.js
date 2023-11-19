@@ -12,6 +12,7 @@ import Loginpage from "./pages/Loginpage";
 import Reserveration from "./pages/Reserveration";
 import Signuppage from "./pages/Signuppage";
 import VerificationCode from "./pages/VerificationCode";
+import Contactpage from "./pages/Contactpage";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render (
@@ -26,6 +27,7 @@ root.render (
       <Route path="/pages/Signuppage" element={<Signuppage/>}></Route>
       <Route path="/pages/VerificationCode/:username" element={<VerificationCode/>}></Route>
       <Route path="/pages/Reserveration" element={<Reserveration/>}></Route>
+      <Route path="/pages/Contactpage" element={<Contactpage/>}></Route>
     </Routes>
     </BrowserRouter>
   </React.StrictMode>
